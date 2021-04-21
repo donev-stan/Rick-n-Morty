@@ -4,14 +4,22 @@ const characters = {
     getAllCharacters(pageID) {
         return fetch(`${baseURL}/character?page=${pageID}`)
             .then(response => response.json())
-            .then(data => { return data });
+            .then(data => data);
     },
 
     getCharacter(id) {
         return fetch(`${baseURL}/character/${id}`)
             .then(response => response.json())
-            .then(data => { return data });
+            .then(data => data);
     }
 };
 
-export {characters};
+const locations = {
+    getAllLocations(pageID) {
+        return fetch(`${baseURL}/location?page=${pageID}`)
+            .then(response => response.json())
+            .then(data => data);
+    }
+};
+
+export {characters, locations};

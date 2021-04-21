@@ -1,41 +1,51 @@
-<div class="container">
-            <div class="row">
-                <div class="col-xl-6">
-                    <div class="card mb-3 box-shadow">
-                        <a href="#/characters"><img src="./img/characters.jfif" class="card-img-top" alt="characters"></a>
-                        <div class="card-body">
-                            <h5 class="card-title"><a href="#/characters/1">Characters</a></h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                        </div>
-                    </div>
-                </div>
-                
+<div class="container mt-4 mb-4">
 
-                <div class="col-xl-6">
-                    <a href="#/locations">
-                        <div class="card mb-3 box-shadow">
-                            <a href="#/locations"><img src="./img/locations.jfif" class="card-img-top" alt="locations"></a>
-                            <div class="card-body">
-                            <h5 class="card-title"><a href="#/locations">Locations</a></h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 30 mins ago</small></p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+{{!-- Navigation Path --}}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#/home">Home</a></li>
+        </ol>
+    </nav>
 
-                <div class="col-xl-12">
-                    <a href="#/episodes">
-                        <div class="card mb-3">
-                            <a href="#/episodes"><img src="./img/episodes.jfif" class="card-img-top" alt="episodes"></a>
-                            <div class="card-body">
-                            <h5 class="card-title"><a href="#/episodes">Episodes</a></h5>
-                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
-                            </div>
-                        </div>
-                    </a>
+{{!-- Characters Card --}}
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card mb-3 box-shadow">
+                <a href="#/characters/1"><img src="./img/characters.jfif" class="card-img-top" alt="characters"></a>
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#/characters/1">Characters</a></h5>
+                    <p class="card-text">Card Text For Characters</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
             </div>
         </div>
+
+{{!-- Locations Card --}}
+        <div class="col-xl-6">
+            <a href="#/locations">
+                <div class="card mb-3 box-shadow">
+                    <a href="#/locations/1"><img src="./img/locations.jfif" class="card-img-top" alt="locations"></a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#/locations/1">Locations</a></h5>
+                        <p class="card-text">Card Text For Locations</p>
+                        <p class="card-text"><small class="text-muted">Last updated 30 mins ago</small></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+{{!-- Episodes Card --}}
+        <div class="col-xl-12">
+            <a href="#/episodes">
+                <div class="card mb-3">
+                    <a href="#/episodes"><img src="./img/episodes.jfif" class="card-img-top" alt="episodes"></a>
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="#/episodes">Episodes</a></h5>
+                        <p class="card-text">Card Text For Episodes</p>
+                        <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

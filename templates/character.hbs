@@ -1,1 +1,24 @@
-<h1>{{character.name}}</h1>
+<div class="container mt-4 mb-4">
+    
+{{!-- Navigation Path --}}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#/home">Home</a></li>
+            <li class="breadcrumb-item"><a href="#/characters/1">Locations</a></li>
+            <li class="breadcrumb-item"><a href="#/character/{{id}}">{{character.name}}</a></li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col text-white">
+            <img src="{{character.image}}" alt="{{character.name}}">
+            <h1>Name: {{character.name}}</h1>
+            <h1>Status: {{character.status}}</h1>
+            <h1>Species: {{character.species}}</h1>
+            <h1>Type: {{character.type}}</h1>
+            <h1>Origin: <a href="{{character.origin.url}}">{{character.origin.name}}</a> </h1>
+            <h1>Last seen: <a href="{{character.location.url}}">{{character.location.name}}</a></h1>
+            <h1>Introduced: {{character.created}}</h1>
+        </div>
+    </div>
+</div>

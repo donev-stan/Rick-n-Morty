@@ -1,16 +1,87 @@
+{{!-- Search --}}
+{{!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Characters</a>
+                <a class="nav-link" href="#">Locations</a>
+                <a class="nav-link" href="#">Episodes</a>
+            </div>
+        </div>
+    </div>
+</nav> --}}
+
+<div class="collapse" id="navbarToggleExternalContent">
+    <form class="row p-4 justify-content-center">
+        <div class="col-md-3 pb-2">
+            <input class="form-control me-2" type="search" placeholder="Search for a name" aria-label="Search">
+        </div>
+
+        <div class="col-md-3 pb-2">
+            <select class="form-select">
+                <option selected>Status</option>
+                <option value="Alive">Alive</option>
+                <option value="Dead">Dead</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+        </div>
+
+        <div class="col-md-3 pb-2">
+            <select class="form-select">
+                <option selected>Gender</option>
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Genderless">Genderless</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <button class="btn btn-outline-success width-100" type="submit">Search</button>
+        </div>
+    </form>
+</div>
+<nav class="navbar navbar-dark ">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+
+
+
+{{!-- Navigation Path --}}
 <div class="container mt-4 mb-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#/home">Home</a></li>
+            <li class="breadcrumb-item"><a href="#/characters/1">Characters</a></li>
+        </ol>
+    </nav>
+
+    {{!-- Character Card --}}
     <div class="row" align="center">
         {{#each characters}}
         <div class="col-xl-6">
             <div class="card mb-3 box-shadow" style="max-width: 700px;">
                 <div class="row g-0">
                     <div class="col-md-5">
-                        <a href="#/character/{{id}}"><img src="{{image}}" class="rounded" width="100%"></a>
+                        <a href="#/character/{{id}}"><img src="{{image}}" class="rounded" width="100%"
+                                alt="{{name}}"></a>
                     </div>
                     <div class="col-md-7">
                         <div class="card-body text-warning">
-                            <h4 class="card-title m-0 mb-1"><a href="#/character/{{id}}" class="text-white">{{name}}</a></h4>
-                            <p class="card-text">{{status}} - {{species}}</p> 
+                            <h4 class="card-title m-0 mb-1"><a href="#/character/{{id}}" class="text-white">{{name}}</a>
+                            </h4>
+                            <p class="card-text">{{status}} - {{species}}</p>
                             <h5 class="card-text mb-1 text-muted">Last known location:</h5>
                             <p class="card-text"><a href="{{location.url}}" class="text-info">{{location.name}}</a></p>
                             <h5 class="card-text mb-1 text-muted">First seen in:</h5>
@@ -23,19 +94,23 @@
         {{/each}}
     </div>
 
+    {{!-- Previous & Next Buttons --}}
     <div class="row">
         <div class="col d-flex justify-content-center">
             {{#if previousPage}}
-            <button type="button" class="btn btn-light"><a href="#/characters/{{previousPage}}">Back</a></button>
+            <button type="button" class="btn"><a href="#/characters/{{previousPage}}"
+                    class="text-warning">Back</a></button>
             {{else}}
-            <button type="button" class="btn btn-light disabled"><a href="#/characters/{{previousPage}}">Back</a></button>
+            <button type="button" class="btn disabled"><a href="#/characters/{{previousPage}}"
+                    class="text-secondary">Back</a></button>
             {{/if}}
         </div>
         <div class="col d-flex justify-content-center">
             {{#if nextPage}}
-            <button type="button" class="btn btn-light"><a href="#/characters/{{nextPage}}">Next</a></button>
+            <button type="button" class="btn"><a href="#/characters/{{nextPage}}" class="text-warning">Next</a></button>
             {{else}}
-            <button type="button" class="btn btn-light disabled"><a href="#/characters/{{nextPage}}">Next</a></button>
+            <button type="button" class="btn disabled"><a href="#/characters/{{nextPage}}"
+                    class="text-secondary">Next</a></button>
             {{/if}}
         </div>
     </div>

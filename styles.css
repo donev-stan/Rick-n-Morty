@@ -28,3 +28,7 @@ a:hover {
 img:hover {
     opacity: 0.95;
 }
+
+.width-100 {
+    width: 100%;
+}
