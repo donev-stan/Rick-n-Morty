@@ -9,7 +9,11 @@ body {
 
 a, p {
     text-decoration: none;
-    color: white;
+    /* color: white; */
+}
+
+a:hover {
+    color: rgb(255,152,0);
 }
 
 .box-shadow {

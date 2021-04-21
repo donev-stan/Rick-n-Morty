@@ -1,8 +1,8 @@
 const baseURL = `https://rickandmortyapi.com/api`;
 
 const characters = {
-    getAllCharacters() {
-        return fetch(`${baseURL}/character`)
+    getAllCharacters(pageID) {
+        return fetch(`${baseURL}/character?page=${pageID}`)
             .then(response => response.json())
             .then(data => { return data });
     },

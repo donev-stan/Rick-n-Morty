@@ -1,17 +1,17 @@
-<div class="container mt-4">
+<div class="container mt-4 mb-4">
     <div class="row" align="center">
         {{#each characters}}
         <div class="col-xl-6">
             <div class="card mb-3 box-shadow" style="max-width: 700px;">
                 <div class="row g-0">
                     <div class="col-md-5">
-                        <a href="#/character/{{id}}"><img src="{{image}}" width="100%"></a>
+                        <a href="#/character/{{id}}"><img src="{{image}}" class="rounded" width="100%"></a>
                     </div>
                     <div class="col-md-7">
-                        <div class="card-body">
-                            <h4 class="card-title m-0 mb-1"><a href="#/character/{{id}}" class="text-info">{{name}}</a></h4>
+                        <div class="card-body text-warning">
+                            <h4 class="card-title m-0 mb-1"><a href="#/character/{{id}}" class="text-white">{{name}}</a></h4>
                             <p class="card-text">{{status}} - {{species}}</p> 
-                            <h5 class="card-text mb-1 text-muted" >Last known location:</h5>
+                            <h5 class="card-text mb-1 text-muted">Last known location:</h5>
                             <p class="card-text"><a href="{{location.url}}" class="text-info">{{location.name}}</a></p>
                             <h5 class="card-text mb-1 text-muted">First seen in:</h5>
                             <p class="card-text"><a href="{{origin.url}}" class="text-info">{{origin.name}}</a></p>
@@ -21,5 +21,22 @@
             </div>
         </div>
         {{/each}}
+    </div>
+
+    <div class="row">
+        <div class="col d-flex justify-content-center">
+            {{#if previousPage}}
+            <button type="button" class="btn btn-light"><a href="#/characters/{{previousPage}}">Back</a></button>
+            {{else}}
+            <button type="button" class="btn btn-light disabled"><a href="#/characters/{{previousPage}}">Back</a></button>
+            {{/if}}
+        </div>
+        <div class="col d-flex justify-content-center">
+            {{#if nextPage}}
+            <button type="button" class="btn btn-light"><a href="#/characters/{{nextPage}}">Next</a></button>
+            {{else}}
+            <button type="button" class="btn btn-light disabled"><a href="#/characters/{{nextPage}}">Next</a></button>
+            {{/if}}
+        </div>
     </div>
 </div>

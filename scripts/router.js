@@ -9,19 +9,22 @@ const router = Sammy('#root', function() {
     });
 
     // Characters
-    this.get('/characters', async function(context) {
+    this.get('/characters/:pageID', async function(context) {
 
-        const {info, results} = await characters.getAllCharacters();
+        const {pageID} = context.params;
+        const {info: {prev, next}, results} = await characters.getAllCharacters(pageID);
+        
         context.characters = await results;
-        await console.log(results);
-        context.status = await results.forEach(({status}) => {
-            return status = Boolean(status === 'Alive');
-        });
-
-        await console.log(context.status);
+        context.previousPage = await prev ? prev.match(/\d+/).join() : null;
+        context.nextPage = await next ? next.match(/\d+/).join() : null;
 
         this.partial('../templates/characters.hbs');
     });
+
+    // // Characters page
+    // this.get('/character?page=pageID', function(context){
+    //     this.partial('../templates/characters.hbs');
+    // });
 
     // Specific Character
     this.get('/character/:characterID', async function(context) {
