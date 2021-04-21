@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(36,40,47);
+}
+
+*::selection {
+    color: rgb(255,152,0);
+    background: rgb(32,35,41);
+}
+
+a, p {
+    text-decoration: none;
+    color: white;
+}
+
+.box-shadow {
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
+}
+
+.card {
+    background-color: rgb(60,62,68);
+    color: white;
+}
+
+img:hover {
+    opacity: 0.95;
+}
