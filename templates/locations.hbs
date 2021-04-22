@@ -1,13 +1,14 @@
 <div class="container mt-4 mb-4">
-
-    {{!-- Navigation Path --}}
+{{!-- Navigation Path --}}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#/home">Home</a></li>
-            <li class="breadcrumb-item"><a href="#/locations/1">Locations</a></li>
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/locations/1">Locations</a></li>
         </ol>
     </nav>
+</div>
 
+<div class="container mt-4 mb-4">
     {{!-- Card Location --}}
     <div class="row">
         {{#each locations}}
@@ -19,7 +20,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{name}}</h5>
                     <p class="card-text">{{dimension}}</p>
-                    <a href="#/location/{{id}}" class="btn btn-warning">See residents</a>
+                    <a href="/location/{{id}}" class="btn btn-warning">See residents</a>
                 </div>
                 <div class="card-footer text-muted">
                     {{created}}
@@ -30,23 +31,5 @@
     </div>
 
     {{!-- Previous & Next Buttons --}}
-    <div class="row">
-        <div class="col d-flex justify-content-center">
-            {{#if previousPage}}
-            <button type="button" class="btn"><a href="#/locations/{{previousPage}}"
-                    class="text-warning">Back</a></button>
-            {{else}}
-            <button type="button" class="btn disabled"><a href="#/locations/{{previousPage}}"
-                    class="text-secondary">Back</a></button>
-            {{/if}}
-        </div>
-        <div class="col d-flex justify-content-center">
-            {{#if nextPage}}
-            <button type="button" class="btn"><a href="#/locations/{{nextPage}}" class="text-warning">Next</a></button>
-            {{else}}
-            <button type="button" class="btn disabled"><a href="#/locations/{{nextPage}}"
-                    class="text-secondary">Next</a></button>
-            {{/if}}
-        </div>
-    </div>
+   {{>pageNavigation}}
 </div>

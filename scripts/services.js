@@ -11,6 +11,12 @@ const characters = {
         return fetch(`${baseURL}/character/${characterID}`)
             .then(response => response.json())
             .then(data => data);
+    },
+
+    getSpecificCharacters(IDs) {
+        return fetch(`${baseURL}/character/${IDs}`)
+            .then(response => response.json())
+            .then(data => data);
     }
 };
 
