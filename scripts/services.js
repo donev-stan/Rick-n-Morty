@@ -7,8 +7,8 @@ const characters = {
             .then(data => data);
     },
 
-    getCharacter(id) {
-        return fetch(`${baseURL}/character/${id}`)
+    getCharacter(characterID) {
+        return fetch(`${baseURL}/character/${characterID}`)
             .then(response => response.json())
             .then(data => data);
     }
@@ -19,7 +19,15 @@ const locations = {
         return fetch(`${baseURL}/location?page=${pageID}`)
             .then(response => response.json())
             .then(data => data);
+    },
+
+    getLocation(locationID) {
+        return fetch(`${baseURL}/location/${locationID}`)
+        .then(response => response.json())
+        .then(data => data);
     }
+
+
 };
 
 export {characters, locations};

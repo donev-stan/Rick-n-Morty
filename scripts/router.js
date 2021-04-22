@@ -15,6 +15,13 @@ const router = Sammy('#root', function() {
         const {info: {prev, next}, results} = await characters.getAllCharacters(pageID);
 
         console.log(results);
+
+        results.origin = results.map(({origin: {name, url}}) => {
+            url = url !== '' ? url.match(/\d+/)[0] : '';
+            return { name, url };
+        });
+
+        console.log(results.origin);
         
         context.characters = await results;
         context.previousPage = await prev ? prev.match(/\d+/).join() : null;
@@ -40,10 +47,10 @@ const router = Sammy('#root', function() {
         const {pageID} = context.params;
 
         // const {info: {previous, next}, results}
-        const {info: {previous, next}, results} = await locations.getAllLocations(pageID);
+        const {info: {prev, next}, results} = await locations.getAllLocations(pageID);
 
         context.locations = await results; 
-        context.previousPage = await previous ? previous.match(/\d+/).join() : null;
+        context.previousPage = await prev ? prev.match(/\d+/).join() : null;
         context.nextPage = await next ? next.match(/\d+/).join() : null;
 
         console.log(results);
@@ -51,6 +58,15 @@ const router = Sammy('#root', function() {
     });
 
     // Specific Location
+    this.get('/location/:locationID', async function(context) {
+
+        const {locationID} = context.params;
+
+        const result = await locations.getLocation(locationID);
+        console.log(result);
+
+        this.partial('../templates/location.hbs');
+    });
 
 });
 

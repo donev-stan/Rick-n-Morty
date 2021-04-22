@@ -1,21 +1,4 @@
 {{!-- Search --}}
-{{!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Home</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Characters</a>
-                <a class="nav-link" href="#">Locations</a>
-                <a class="nav-link" href="#">Episodes</a>
-            </div>
-        </div>
-    </div>
-</nav> --}}
-
 <div class="collapse" id="navbarToggleExternalContent">
     <form class="row p-4 justify-content-center">
         <div class="col-md-3 pb-2">
@@ -56,10 +39,9 @@
     </div>
 </nav>
 
-
-
-{{!-- Navigation Path --}}
 <div class="container mt-4 mb-4">
+    
+    {{!-- Navigation Path --}}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#/home">Home</a></li>
@@ -85,7 +67,7 @@
                             <h5 class="card-text mb-1 text-muted">Last known location:</h5>
                             <p class="card-text"><a href="{{location.url}}" class="text-info">{{location.name}}</a></p>
                             <h5 class="card-text mb-1 text-muted">First seen in:</h5>
-                            <p class="card-text"><a href="{{origin.url}}" class="text-info">{{origin.name}}</a></p>
+                            <p class="card-text"><a href="#/locaions/{{origin.url}}" class="text-info">{{origin.name}}</a></p>
                         </div>
                     </div>
                 </div>
