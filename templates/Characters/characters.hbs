@@ -1,8 +1,10 @@
 {{!-- Search --}}
-<div class="collapse" id="navbarToggleExternalContent">
-    <form class="row p-4 justify-content-center">
-        <div class="col-md-3 pb-2" action="/searchCharacter" method="POST">
-            <input class="form-control me-2" type="search" placeholder="Search for a name" aria-label="Search" name="name">
+<div class="container-fluid">
+    <div class="row mt-4">
+        <div class="collapse" id="navbarToggleExternalContent">
+    <form class="row p-4 justify-content-center" action="/characters/1" method="GET">
+        <div class="col-md-3 pb-2">
+            <input class="form-control me-2" type="search" placeholder="Character name" aria-label="Search" name="characterName">
         </div>
 
         <div class="col-md-3 pb-2">
@@ -39,6 +41,8 @@
     </div>
 </nav>
 
+    </div>
+</div>
 
 {{!-- Navigation Path --}}
 <div class="container mt-4 mb-4">
@@ -51,13 +55,11 @@
 </div>
 
 <div class="container mt-4 mb-4">
-    
-    
 
     {{!-- Character Card --}}
     <div class="row" align="center">
         {{#each characters}}
-        <div class="col-xl-6">
+        <div class="col-xl-6 ">
             <div class="card mb-3 box-shadow" style="max-width: 700px;">
                 <div class="row g-0">
                     <div class="col-md-5">

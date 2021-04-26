@@ -1,0 +1,40 @@
+<div class="container mt-4 mb-4">
+
+    {{!-- Navigation Path --}}
+    <div class="row">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/locations/1">Locations</a></li>
+                <li class="breadcrumb-item"><a href="/location/{{id}}">{{location.name}}</a></li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col text-white">
+            <h1>Name: {{location.name}}</h1>
+            <h1>Type: {{location.type}}</h1>
+            <h1>Dimension: {{location.dimension}}</h1>
+            <h1>Created: {{location.created}}</h1>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col text-center text-warning">
+            <h1>Known residents of {{location.name}}:</h1>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        {{#each residents}}
+        <div class="card m-3" style="width: 18rem;">
+            <a href="/character/{{id}}"><img src="{{image}}" class="card-img-top" alt="{{name}}"></a>
+            <div class="card-body">
+                <a href="/character/{{id}}"><h5 class="card-title">{{name}}</h5></a>
+                <p class="card-text">{{status}} - {{species}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
