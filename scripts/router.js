@@ -1,4 +1,4 @@
-import { characters, locations, configureCharactersURL, configureLocationsURL } from "./services.js";
+import { characters, locations, episodes, configureCharactersURL, configureLocationsURL, configureEpisodesURL } from "./services.js";
 
 const router = Sammy("#root", function () {
     this.use("Handlebars", "hbs");
@@ -31,14 +31,10 @@ const router = Sammy("#root", function () {
             searchQuery = returnedSearchQuery;
             isSearching = false;
         }
-        if (context.path === '/characters/1') searchQuery = '';
+        // if (context.path === '/characters/1') searchQuery = '';
 
         console.log(url + searchQuery);
         const { info, results } = await characters.getCharacters(url + searchQuery);
-        // const returned = await characters.getCharacters(url + searchQuery);
-        // const {info, results} = returned;
-        // console.log(info);
-        // console.log(results);
 
         // Getting indexes only form URLs
         Object.entries(results).map(([id, { location, origin }]) => {
@@ -54,6 +50,7 @@ const router = Sammy("#root", function () {
 
         // Attach characters to the context
         context.characters = results;
+        console.log(results);
 
         loadPageNavigation(context, info, "characters").then(function () {
             this.partial("../templates/Characters/characters.hbs");
@@ -65,7 +62,6 @@ const router = Sammy("#root", function () {
         const { characterID } = context.params;
         const character = await characters.getCharactersByID(characterID);
 
-
         // Getting indexes only form URLs
         character.origin.url =
             character.origin.url != ""
@@ -75,7 +71,10 @@ const router = Sammy("#root", function () {
             character.location.url != ""
                 ? character.location.url.match(/\d+/)[0]
                 : "";
+        const episodeIDs = 
+            character.episode.map(episode => episode.match(/\d+/)[0]);
 
+        context.episodes = await episodes.getEpisodesByID(episodeIDs);
         context.character = await character;
         this.partial("../templates/Characters/character.hbs");
     });
@@ -84,7 +83,7 @@ const router = Sammy("#root", function () {
     this.get("/locations/:pageID", async function (context) {
         const { pageID, locationName, type, dimension } = context.params;
 
-        if (locationName, type, dimension) isSearching = true;
+        if (locationName !== '' || type || dimension) isSearching = true;
 
         const { url, returnedSearchQuery } = configureLocationsURL({ pageID, locationName, type, dimension });
 
@@ -140,10 +139,10 @@ const router = Sammy("#root", function () {
     });
 
     // Episodes
-    this.get("/episodes/:pageID", function(context) {
+    this.get("/episodes/:pageID", async function(context) {
         const { pageID, episodeName, episodeCode } = context.params;
 
-        if (episodeName, episodeCode) isSearching = true;
+        if (episodeName !== '' || episodeCode !== '') isSearching = true;
 
         const { url, returnedSearchQuery } = configureEpisodesURL({ pageID, episodeName, episodeCode });
 
@@ -153,10 +152,9 @@ const router = Sammy("#root", function () {
         }
         if (context.path === '/episodes/1') searchQuery = '';
 
-        const { info, results } = 
+        const { info, results } = await episodes.getEpisodes(url + searchQuery);
 
-        // context.episodes = 
-
+        context.episodes = results;
         loadPageNavigation(context, info, "episodes").then(function () {
             this.partial("../templates/Episodes/episodes.hbs");
         });

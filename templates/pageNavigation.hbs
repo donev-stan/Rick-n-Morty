@@ -3,17 +3,17 @@
 <div class="row">
     <div class="col d-flex justify-content-center">
         {{#if previousPage}}
-        <button type="button" class="btn"><a href="/characters/{{previousPage}}" class="text-warning">Back</a></button>
+        <button type="button" class="btn"><a href="#{{previousPage}}" class="text-warning">Back</a></button>
         {{else}}
-        <button type="button" class="btn disabled"><a href="/characters/{{previousPage}}"
+        <button type="button" class="btn disabled"><a href="#{{previousPage}}"
                 class="text-secondary">Back</a></button>
         {{/if}}
     </div>
     <div class="col d-flex justify-content-center">
         {{#if nextPage}}
-        <button type="button" class="btn"><a href="{{nextPage}}" class="text-warning">Next</a></button>
+        <button type="button" class="btn"><a href="#{{nextPage}}" class="text-warning">Next</a></button>
         {{else}}
-        <button type="button" class="btn disabled"><a href="{{nextPage}}"
+        <button type="button" class="btn disabled"><a href="#{{nextPage}}"
                 class="text-secondary">Next</a></button>
         {{/if}}
     </div>

@@ -12,9 +12,9 @@ a, p {
     /* color: white; */
 }
 
-a:hover {
+/* a:hover {
     color: rgb(255,152,0);
-}
+} */
 
 .box-shadow {
     box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
@@ -31,4 +31,21 @@ img:hover {
 
 .width-100 {
     width: 100%;
+}
+
+.bg-Dead, .bg-Alive, .bg-unknown {
+    height: 1rem;
+    border-radius: 50%;
+}
+
+.bg-Dead {
+    background-color: red;
+}
+
+.bg-Alive {
+    background-color: rgb(85, 204, 68);
+}
+
+.bg-unknown {
+    background-color: rgb(158, 158, 158);;
 }

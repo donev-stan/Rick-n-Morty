@@ -5,22 +5,53 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="/characters/1">Characters</a></li>
-                <li class="breadcrumb-item"><a href="/character/{{id}}">{{character.name}}</a></li>
+                <li class="breadcrumb-item"><a href="#/characters/1">Characters</a></li>
+                <li class="breadcrumb-item"><a href="#/character/{{id}}">{{character.name}}</a></li>
             </ol>
         </nav>
     </div>
 
-    <div class="row">
-        <div class="col text-white">
-            <img src="{{character.image}}" alt="{{character.name}}">
-            <h1>Name: {{character.name}}</h1>
-            <h1>Status: {{character.status}}</h1>
-            <h1>Species: {{character.species}}</h1>
-            <h1>Type: {{character.type}}</h1>
-            <h1>Origin: <a href="/location/{{character.origin.url}}">{{character.origin.name}}</a> </h1>
-            <h1>Last seen: <a href="/location/{{character.location.url}}">{{character.location.name}}</a></h1>
-            <h1>Introduced: {{character.created}}</h1>
+    {{!-- Character Card --}}
+    <div class="row m-1 mb-4">
+        <div class="col-md-6">
+            <div class="card">
+                <img src="{{character.image}}" class="card-img-top" alt="{{character.name}}">
+                <div class="card-body">
+                    <h2 class="card-title">{{character.name}}</h2>
+                    <p class="card-text mb-1 h5">Status: {{character.status}}</p>
+                    <p class="card-text mb-1 h5">Species: {{character.species}}</p>
+                    {{#if character.type}}
+                    <p class="card-text mb-1 h5">Type: {{character.type}}</p>
+                    {{/if}}
+                    <p class="card-text mb-1 h5">Gender: {{character.gender}}</p>
+                    <p class="card-text mb-1 h5">Origin: <a
+                            href="#/location/{{character.origin.url}}" class="text-info">{{character.origin.name}}</a></p>
+                    <p class="card-text mb-1 h5">Last seen: <a
+                            href="#/location/{{character.location.url}}" class="text-info">{{character.location.name}}</a></p>
+                </div>
+            </div>
         </div>
+    </div>
+
+    {{!-- Episodes Cards --}}
+    <div class="row m-1">
+        <h3 class="text-warning">Featured Episodes</h3>
+        {{#each episodes}}
+        <div class="col-lg-6">
+            <div class="card mb-3">
+                <div class="card-header">
+                    {{episode}}
+                </div>
+                <div class="card-body">
+                    <blockquote class="blockquote mb-0">
+                        <a href="/episode/{{id}}">
+                            <p class="text-info">{{name}}</p>
+                        </a>
+                        <footer class="blockquote-footer"><cite title="Source Title">{{air_date}}</cite></footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </div>

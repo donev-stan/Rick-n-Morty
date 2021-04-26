@@ -2,135 +2,136 @@
 <div class="container-fluid">
     <div class="row mt-4">
         <div class="collapse" id="navbarToggleExternalContent">
-    <form class="row p-4 justify-content-center" action="/locations/1" method="GET">
-        <div class="col-md-3 pb-2">
-            <input class="form-control me-2" type="search" placeholder="Location name" aria-label="Search" name="locationName">
-        </div>
+            <form class="row p-4 justify-content-center" action="/locations/1" method="GET">
+                <div class="col-md-3 pb-2">
+                    <input class="form-control me-2" type="search" placeholder="Location name" aria-label="Search"
+                        name="locationName">
+                </div>
 
-        <div class="col-md-3 pb-2">
-            <select class="form-select" name="type">
-                <option selected>Type</option>
-                <option value="Dream">Dream</option>
-                <option value="Planet">Planet</option>
-                <option value="Microverse">Microverse</option>
-                <option value="TV">TV</option>
-                <option value="Space Station">Space Station</option>
-                <option value="Cluster">Cluster</option>
-                <option value="Resort">Resort</option>
-                <option value="Customs">Customs</option>
-                <option value="Game">Game</option>
-                <option value="Menagerie">Menagerie</option>
-                <option value="Unknown">Unknown</option>
-                <option value="Spacecraft">Spacecraft</option>
-                <option value="Box">Box</option>
-                <option value="Teenyverse">Teenyverse</option>
-                <option value="Miniverse">Miniverse</option>
-                <option value="Daycare">Daycare</option>
-                {{!-- <option value="Draft Planet">Draft Planet</option> --}}
-                <option value="Spa">Spa</option>
-                <option value="Arcade">Arcade</option>
-                <option value="Machine">Machine</option>
-                <option value="Artificially generated world">Artificially generated world</option>
-                <option value="Diegesis">Diegesis</option>
-                <option value="Nightmare">Nightmare</option>
-                <option value="Woods">Woods</option>
-                <option value="Convention">Convention</option>
-                <option value="Liquid">Liquid</option>
-                <option value="Quasar">Quasar</option>
-                <option value="Quadrant">Quadrant</option>
-                <option value="Base">Base</option>
-                <option value="Death Star">Death Star</option>
-                <option value="Reality">Reality</option>
-                <option value="Dimention">Dimention</option>
-                <option value="Acid Plant">Acid Plant</option>
-                <option value="Asteroid">Asteroid</option>
-                <option value="Non-Diegetic Alternative Reality">Non-Diegetic Alternative Reality</option>
-            </select>
-        </div>
+                <div class="col-md-3 pb-2">
+                    <select class="form-select" name="type">
+                        <option selected>Type</option>
+                        <option value="Dream">Dream</option>
+                        <option value="Planet">Planet</option>
+                        <option value="Microverse">Microverse</option>
+                        <option value="TV">TV</option>
+                        <option value="Space Station">Space Station</option>
+                        <option value="Cluster">Cluster</option>
+                        <option value="Resort">Resort</option>
+                        <option value="Customs">Customs</option>
+                        <option value="Game">Game</option>
+                        <option value="Menagerie">Menagerie</option>
+                        <option value="Unknown">Unknown</option>
+                        <option value="Spacecraft">Spacecraft</option>
+                        <option value="Box">Box</option>
+                        <option value="Teenyverse">Teenyverse</option>
+                        <option value="Miniverse">Miniverse</option>
+                        <option value="Daycare">Daycare</option>
+                        {{!-- <option value="Draft Planet">Draft Planet</option> --}}
+                        <option value="Spa">Spa</option>
+                        <option value="Arcade">Arcade</option>
+                        <option value="Machine">Machine</option>
+                        <option value="Artificially generated world">Artificially generated world</option>
+                        <option value="Diegesis">Diegesis</option>
+                        <option value="Nightmare">Nightmare</option>
+                        <option value="Woods">Woods</option>
+                        <option value="Convention">Convention</option>
+                        <option value="Liquid">Liquid</option>
+                        <option value="Quasar">Quasar</option>
+                        <option value="Quadrant">Quadrant</option>
+                        <option value="Base">Base</option>
+                        <option value="Death Star">Death Star</option>
+                        <option value="Reality">Reality</option>
+                        <option value="Dimention">Dimention</option>
+                        <option value="Acid Plant">Acid Plant</option>
+                        <option value="Asteroid">Asteroid</option>
+                        <option value="Non-Diegetic Alternative Reality">Non-Diegetic Alternative Reality</option>
+                    </select>
+                </div>
 
-        <div class="col-md-3 pb-2">
-            <select class="form-select" name="dimension">
-                <option selected>Dimension</option>
-                <option value="C-137">C-137 Dimension</option>
-                <option value="5-126">5-126 Dimension</option>
-                <option value="K-83">K-83 Dimension</option>
-                <option value="C-500A">C-500A Dimension</option>
-                <option value="D-99">D-99 Dimension</option>
-                <option value="D716">D716 Dimension</option>
-                <option value="D716-B">D716-B Dimension</option>
-                <option value="D716-C">D716-C Dimension</option>
-                <option value="K-22">K-22 Dimension</option>
-                <option value="C-35">C-35 Dimension</option>
-                <option value="J-22">J-22 Dimension</option>
-                <option value="Unknown Dimension">Unknown Dimension</option>
-                <option value="Magic Dimension">Magic Dimension</option>
-                <option value="Tusk Dimension">Tusk Dimension</option>
-                <option value="Wasp Dimension">Wasp Dimension</option>
-                <option value="Fantasy Dimension">Fantasy Dimension</option>
-                <option value="Merged Dimension">Merged Dimension</option>
-                <option value="Giant Telepathic Spiders Dimension">Giant Telepathic Spiders Dimension</option>
-                <option value="Fascist Shrimp Dimension">Fascist Shrimp Dimension</option>
-                <option value="Fascist Teddy Bear Dimension">Fascist Teddy Bear Dimension</option>
-                <option value="Fascist Dimension">Fascist Dimension</option>
-                <option value="Chair Dimension">Chair Dimension</option>
-                <option value="Phone Dimension">Phone Dimension</option>
-                <option value="Pizza Dimension">Pizza Dimension</option>
-                <option value="Post-Apocalyptic Dimension">Post-Apocalyptic Dimension</option>
-                <option value="Replacement Dimension">Replacement Dimension</option>
-                <option value="Cronenberg Dimention">Cronenberg Dimention</option>
-                <option value="Fantasy Dimention">Fantasy Dimention</option>
-                <option value="Evil Rick's Target Dimension">Evil Rick's Target Dimension</option>
-                <option value="Eric Stoltz Mask Dimension">Eric Stoltz Mask Dimension</option>
-                <option value="Cromulon Dimension">Cromulon Dimension</option>
-                <option value="Testicle Monster Dimension">Testicle Monster Dimension</option>
-            </select>
-        </div>
+                <div class="col-md-3 pb-2">
+                    <select class="form-select" name="dimension">
+                        <option selected>Dimension</option>
+                        <option value="C-137">C-137 Dimension</option>
+                        <option value="5-126">5-126 Dimension</option>
+                        <option value="K-83">K-83 Dimension</option>
+                        <option value="C-500A">C-500A Dimension</option>
+                        <option value="D-99">D-99 Dimension</option>
+                        <option value="D716">D716 Dimension</option>
+                        <option value="D716-B">D716-B Dimension</option>
+                        <option value="D716-C">D716-C Dimension</option>
+                        <option value="K-22">K-22 Dimension</option>
+                        <option value="C-35">C-35 Dimension</option>
+                        <option value="J-22">J-22 Dimension</option>
+                        <option value="Unknown Dimension">Unknown Dimension</option>
+                        <option value="Magic Dimension">Magic Dimension</option>
+                        <option value="Tusk Dimension">Tusk Dimension</option>
+                        <option value="Wasp Dimension">Wasp Dimension</option>
+                        <option value="Fantasy Dimension">Fantasy Dimension</option>
+                        <option value="Merged Dimension">Merged Dimension</option>
+                        <option value="Giant Telepathic Spiders Dimension">Giant Telepathic Spiders Dimension</option>
+                        <option value="Fascist Shrimp Dimension">Fascist Shrimp Dimension</option>
+                        <option value="Fascist Teddy Bear Dimension">Fascist Teddy Bear Dimension</option>
+                        <option value="Fascist Dimension">Fascist Dimension</option>
+                        <option value="Chair Dimension">Chair Dimension</option>
+                        <option value="Phone Dimension">Phone Dimension</option>
+                        <option value="Pizza Dimension">Pizza Dimension</option>
+                        <option value="Post-Apocalyptic Dimension">Post-Apocalyptic Dimension</option>
+                        <option value="Replacement Dimension">Replacement Dimension</option>
+                        <option value="Cronenberg Dimention">Cronenberg Dimention</option>
+                        <option value="Fantasy Dimention">Fantasy Dimention</option>
+                        <option value="Evil Rick's Target Dimension">Evil Rick's Target Dimension</option>
+                        <option value="Eric Stoltz Mask Dimension">Eric Stoltz Mask Dimension</option>
+                        <option value="Cromulon Dimension">Cromulon Dimension</option>
+                        <option value="Testicle Monster Dimension">Testicle Monster Dimension</option>
+                    </select>
+                </div>
 
-        <div class="col-md-3">
-            <button class="btn btn-outline-success width-100">Search</button>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-success width-100">Search</button>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
-<nav class="navbar navbar-dark ">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
-
+        <nav class="navbar navbar-dark ">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
     </div>
 </div>
 
 
 <div class="container mt-4 mb-4">
-{{!-- Navigation Path --}}
+    {{!-- Navigation Path --}}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/locations/1">Locations</a></li>
+            <li class="breadcrumb-item"><a href="#/locations/1">Locations</a></li>
         </ol>
     </nav>
 </div>
 
-<div class="container mt-4 mb-4">
+<div class="container mt-4">
     {{!-- Card Location --}}
     <div class="row">
         {{#each locations}}
-        <div class="col-sm-6 col-xl-4 p-4">
+        <div class="col-md-6 col-lg-4 pb-3">
             <div class="card text-center">
                 <div class="card-header">
                     {{type}}
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">{{name}}</h5>
-                    <p class="card-text">{{dimension}}</p>
-                    <a href="/location/{{id}}" class="btn btn-warning">See residents</a>
+                    {{!-- <p class="card-text">{{dimension}}</p> --}}
+                    <a href="#/location/{{id}}" class="btn btn-warning mt-2">See residents</a>
                 </div>
                 <div class="card-footer text-muted">
-                    {{created}}
+                    {{!-- {{created}} --}}
+                    {{dimension}}
                 </div>
             </div>
         </div>
@@ -138,5 +139,5 @@
     </div>
 
     {{!-- Previous & Next Buttons --}}
-   {{>pageNavigation}}
+    {{>pageNavigation}}
 </div>

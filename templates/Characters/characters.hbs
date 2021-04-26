@@ -2,44 +2,45 @@
 <div class="container-fluid">
     <div class="row mt-4">
         <div class="collapse" id="navbarToggleExternalContent">
-    <form class="row p-4 justify-content-center" action="/characters/1" method="GET">
-        <div class="col-md-3 pb-2">
-            <input class="form-control me-2" type="search" placeholder="Character name" aria-label="Search" name="characterName">
-        </div>
+            <form class="row p-4 justify-content-center" action="/characters/1" method="GET">
+                <div class="col-md-3 pb-2">
+                    <input class="form-control me-2" type="search" placeholder="Character name" aria-label="Search"
+                        name="characterName">
+                </div>
 
-        <div class="col-md-3 pb-2">
-            <select class="form-select" name="status">
-                <option selected>Status</option>
-                <option value="Alive">Alive</option>
-                <option value="Dead">Dead</option>
-                <option value="Unknown">Unknown</option>
-            </select>
-        </div>
+                <div class="col-md-3 pb-2">
+                    <select class="form-select" name="status">
+                        <option selected>Status</option>
+                        <option value="Alive">Alive</option>
+                        <option value="Dead">Dead</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
+                </div>
 
-        <div class="col-md-3 pb-2">
-            <select class="form-select" name="gender">
-                <option selected>Gender</option>
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-                <option value="Genderless">Genderless</option>
-                <option value="Unknown">Unknown</option>
-            </select>
-        </div>
+                <div class="col-md-3 pb-2">
+                    <select class="form-select" name="gender">
+                        <option selected>Gender</option>
+                        <option value="Female">Female</option>
+                        <option value="Male">Male</option>
+                        <option value="Genderless">Genderless</option>
+                        <option value="Unknown">Unknown</option>
+                    </select>
+                </div>
 
-        <div class="col-md-3">
-            <button class="btn btn-outline-success width-100">Search</button>
+                <div class="col-md-3">
+                    <button class="btn btn-outline-success width-100">Search</button>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
-<nav class="navbar navbar-dark ">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
+        <nav class="navbar navbar-dark ">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
 
     </div>
 </div>
@@ -59,22 +60,25 @@
     {{!-- Character Card --}}
     <div class="row" align="center">
         {{#each characters}}
-        <div class="col-xl-6 ">
+        <div class="col-xl-6">
             <div class="card mb-3 box-shadow" style="max-width: 700px;">
                 <div class="row g-0">
                     <div class="col-md-5">
-                        <a href="/character/{{id}}"><img src="{{image}}" class="rounded" width="100%"
+                        <a href="#/character/{{id}}"><img src="{{image}}" class="rounded" width="100%"
                                 alt="{{name}}"></a>
                     </div>
                     <div class="col-md-7">
                         <div class="card-body text-warning">
-                            <h4 class="card-title m-0 mb-1"><a href="/character/{{id}}" class="text-white">{{name}}</a>
+                            <h4 class="card-title m-0 mb-1"><a href="#/character/{{id}}" class="text-white">{{name}}</a>
                             </h4>
-                            <p class="card-text">{{status}} - {{species}}</p>
+                            <p class="card-text align-center"><span class="badge bg-{{status}}"> </span> {{status}} -
+                                {{species}}</p>
                             <h5 class="card-text mb-1 text-muted">Last known location:</h5>
-                            <p class="card-text"><a href="/location/{{location.url}}" class="text-info">{{location.name}}</a></p>
+                            <p class="card-text"><a href="#/location/{{location.url}}"
+                                    class="text-info">{{location.name}}</a></p>
                             <h5 class="card-text mb-1 text-muted">First seen in:</h5>
-                            <p class="card-text"><a href="/location/{{origin.url}}" class="text-info">{{origin.name}}</a></p>
+                            <p class="card-text"><a href="#/location/{{origin.url}}"
+                                    class="text-info">{{origin.name}}</a></p>
                         </div>
                     </div>
                 </div>

@@ -1,9 +1,10 @@
 const baseURL = `https://rickandmortyapi.com/api`;
 
-function configureCharactersURL({pageID, characterName, status, gender}) {
+function configureCharactersURL({pageID = 1, characterName, status, gender}) {
     const url = `${baseURL}/character/?page=${pageID}`;
     let nameQuery, statusQuery, genderQuery = '';
    
+    console.log(url);
     if (characterName !== undefined) {
         if (characterName !== '') {
             nameQuery = `&name=${characterName}`;
@@ -52,40 +53,50 @@ function configureLocationsURL({pageID, locationName, type, dimension}) {
     return { url, returnedSearchQuery };
 }
 
-const characters = {
-    getCharacters(url){
-        return fetchURL(url);
-        // return fetch(url)
-        //     .then(response => response.json())
-        //     .then(data => data);
-    },
+function configureEpisodesURL({pageID, episodeName, episodeCode}) {
+    const url = `${baseURL}/episode/?page=${pageID}`;
+    let nameQuery, codeQuery = '';
 
-    getCharactersByID(IDs) {
-        return fetchURL(`${baseURL}/character/${IDs}`);
-        // return fetch(`${baseURL}/character/${IDs}`)
-        //     .then(response => response.json())
-        //     .then(data => data);
+    if (episodeName !== undefined) {
+        if (episodeName !== '') {
+            nameQuery = `&name=${episodeName}`;
+        }
     }
+
+    if (episodeCode !== undefined) {
+        if (episodeCode !== '') {
+            codeQuery = `&code=${episodeCode}`;
+        }
+    }
+
+    const returnedSearchQuery = `${nameQuery ? nameQuery : ''}${codeQuery ? codeQuery : ''}`;
+    return { url, returnedSearchQuery};
+}
+
+const characters = {
+    getCharacters: (url) => fetchURL(url),
+    getCharactersByID: (charactersIDs) => fetchURL(`${baseURL}/character/${charactersIDs}`)
 };
 
 const locations = {
-    getLocations(url) {
-        return fetchURL(url);
-        // return fetch(url)
-        //     .then(response => response.json())
-        //     .then(data => data);
-    },
+    getLocations: (url) => fetchURL(url),
+    getLocationsByID: (locationsIDs) => fetchURL(`${baseURL}/location/${locationsIDs}`),
+};
 
-    getLocationsByID(locationID) {
-        return fetchURL(`${baseURL}/location/${locationID}`);
-        // return fetch(`${baseURL}/location/${locationID}`)
-        //     .then(response => response.json())
-        //     .then(data => data);
-    }
+const episodes = {
+    getEpisodes: (url) => fetchURL(url),
+    getEpisodesByID: (episodesIDs) => fetchURL(`${baseURL}/episode/${episodesIDs}`)
 };
 
 function fetchURL(url) {
-    return fetch(url).then(response => response.json()).then(data => data);
+    return fetch(url).then(response => response.json()).then(data => data).catch(error => console.dir(error));
 } 
 
-export {characters, locations, configureCharactersURL, configureLocationsURL};
+export {
+    characters, 
+    locations, 
+    episodes, 
+    configureCharactersURL, 
+    configureLocationsURL,
+    configureEpisodesURL
+};

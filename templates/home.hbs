@@ -1,6 +1,6 @@
 <div class="container mt-4 mb-4">
 
-{{!-- Navigation Path --}}
+    {{!-- Navigation Path --}}
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Home</a></li>
@@ -8,59 +8,60 @@
     </nav>
 
     <div class="row">
-{{!-- Characters Card --}}
+        {{!-- Characters Card --}}
         <div class="col-xl-6">
             <div class="card mb-3 box-shadow">
-                <a href="/characters/1"><img src="./img/characters.jfif" class="card-img-top" alt="characters"></a>
+                <a href="#/characters/1"><img src="./img/characters.jfif" class="card-img-top"
+                        alt="characters image"></a>
                 <div class="card-body">
-                    <h5 class="card-title"><a href="/characters/1">Characters</a></h5>
+                    <h5 class="card-title"><a href="#/characters/1">Characters</a></h5>
                     {{!-- <h5 class="card-title"><a href="/character/?page=/1">Characters</a></h5> --}}
-                    <p class="card-text">Card Text For Characters</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="card-text">Search and see information about every character on the show.</p>
+                    {{!-- <p class="card-text"><small class="text-muted">Last updated none of your business ago</small>
+                    </p> --}}
                 </div>
             </div>
         </div>
 
-{{!-- Locations Card --}}
+        {{!-- Locations Card --}}
         <div class="col-xl-6">
-            <a href="/locations">
-                <div class="card mb-3 box-shadow">
-                    <a href="/locations/1"><img src="./img/locations.jfif" class="card-img-top" alt="locations"></a>
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="/locations/1">Locations</a></h5>
-                        <p class="card-text">Card Text For Locations</p>
-                        <p class="card-text"><small class="text-muted">Last updated 30 mins ago</small></p>
-                    </div>
+            <div class="card mb-3 box-shadow">
+                <a href="#/locations/1"><img src="./img/locations.jfif" class="card-img-top" alt="locations image"></a>
+                <div class="card-body">
+                    <h5 class="card-title"><a href="#/locations/1">Locations</a></h5>
+                    <p class="card-text">Search and see information about every location on the show.</p>
+                    {{!-- <p class="card-text"><small class="text-muted">Last updated none of your business ago</small>
+                    </p> --}}
                 </div>
-            </a>
+            </div>
         </div>
 
-{{!-- Episodes Card --}}
+        {{!-- Episodes Card --}}
         <div class="col-xl-6">
             <a href="/episodes">
                 <div class="card mb-3 box-shadow">
-                    <a href="/episodes"><img src="./img/episodes.jfif" class="card-img-top" alt="episodes"></a>
+                    <a href="#/episodes/1"><img src="./img/episodes.jfif" class="card-img-top" alt="episodes image"></a>
                     <div class="card-body">
-                        <h5 class="card-title"><a href="/episodes">Episodes</a></h5>
-                        <p class="card-text">Card Text For Episodes</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
+                        <h5 class="card-title"><a href="#/episodes/1">Episodes</a></h5>
+                        <p class="card-text">Search and see information about every episode on the show.</p>
+                        {{!-- <p class="card-text"><small class="text-muted">Last updated none of your business
+                                ago</small></p> --}}
                     </div>
                 </div>
             </a>
         </div>
 
-{{!-- Favorites Card --}}
+        {{!-- Favorites Card --}}
         <div class="col-xl-6">
-            <a href="/favorites">
-                <div class="card mb-3 box-shadow">
-                    <a href="/favorites"><img src="./img/favorites.jpg" class="card-img-top" alt="favorites"></a>
-                    <div class="card-body">
-                        <h5 class="card-title"><a href="/favorites">Favorites</a></h5>
-                        <p class="card-text">Card Text For Favorites</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
-                    </div>
+            <div class="card mb-3 box-shadow">
+                <a href="/favorites"><img src="./img/favorites.jpg" class="card-img-top" alt="favorites"></a>
+                <div class="card-body">
+                    <h5 class="card-title"><a href="/favorites">My Panel</a></h5>
+                    <p class="card-text">Save, edit and follow favorite characters, locations and episodes.</p>
+                    {{!-- <p class="card-text"><small class="text-muted">Last updated none of your business
+                            ago</small></p> --}}
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 </div>

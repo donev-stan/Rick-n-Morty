@@ -1,0 +1,62 @@
+{{!-- Search --}}
+<div class="container-fluid">
+    <div class="row mt-4">
+        <div class="collapse" id="navbarToggleExternalContent">
+            <form class="row p-4 justify-content-center" action="#/episodes/1" method="GET">
+                <div class="col-md-4 pb-2">
+                    <input class="form-control me-2" type="search" placeholder="Episode name" aria-label="Search"
+                        name="episodeName">
+                </div>
+
+                <div class="col-md-4 pb-2">
+                    <input class="form-control me-2" type="search" placeholder="Episode code (S01E01)"
+                        aria-label="Search" name="episodeCode">
+                </div>
+
+                <div class="col-md-4">
+                    <button class="btn btn-outline-success width-100">Search</button>
+                </div>
+            </form>
+        </div>
+        <nav class="navbar navbar-dark ">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </div>
+</div>
+
+<div class="container mt-4">
+    {{!-- Navigation Path --}}
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="#/episodes/1">Episodes</a></li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container">
+    {{!-- Card Location --}}
+    <div class="row">
+        {{#each episodes}}
+        <div class="col-sm-12 col-lg-6 pb-3">
+            <div class="card text-center">
+                <div class="card-header">{{episode}}</div>
+                <div class="card-body">
+                    <h5 class="card-title">{{name}}</h5>
+                    <a href="#/episode/{{id}}" class="btn btn-primary">See characters</a>
+                </div>
+                <div class="card-footer text-muted">{{air_date}}</div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+    {{!-- Previous & Next Buttons --}}
+    {{>pageNavigation}}
+</div>
