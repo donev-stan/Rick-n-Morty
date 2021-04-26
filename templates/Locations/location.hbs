@@ -25,25 +25,31 @@
             </div>
         </div>
     </div>
-    
+
     {{!-- Residents --}}
     <div class="row mt-4">
-        <div class="col text-center text-warning">
-            <h4>Known residents of {{location.name}}:</h4>
+        <div class="col text-center text-warning mt-4">
+            <h3>Known residents of {{location.name}}:</h3>
         </div>
     </div>
 
     <div class="row justify-content-center">
+        {{#if residents}}
         {{#each residents}}
-        <div class="card m-3" style="width: 18rem;">
-            <a href="#/character/{{id}}"><img src="{{image}}" class="card-img-top" alt="{{name}}"></a>
-            <div class="card-body">
-                <a href="#/character/{{id}}" class="text-warning">
-                    <h5 class="card-title text-reset">{{name}}</h5>
-                </a>
-                <p class="card-text">{{status}} - {{species}}</p>
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+            <div class="card m-3">
+                <a href="#/character/{{id}}"><img src="{{image}}" class="card-img-top" alt="{{name}}"></a>
+                <div class="card-body">
+                    <a href="#/character/{{id}}" class="text-warning">
+                        <h5 class="card-title text-reset">{{name}}</h5>
+                    </a>
+                    <p class="card-text">{{status}} - {{species}}</p>
+                </div>
             </div>
         </div>
         {{/each}}
+        {{else}}
+        <h5 class="text-center text-danger"><i> No known residents at the moment. </i></h5>
+        {{/if}}
     </div>
 </div>

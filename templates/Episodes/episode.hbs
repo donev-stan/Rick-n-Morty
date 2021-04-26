@@ -1,0 +1,64 @@
+<div class="container mt-4 mb-4">
+
+    {{!-- Navigation Path --}}
+    <div class="row">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="#/episodes/1">Episodes</a></li>
+                <li class="breadcrumb-item text-warning" aria-current="page">{{episode.name}}</li>
+            </ol>
+        </nav>
+    </div>
+
+    {{!-- Card Episode --}}
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-lg-6 pb-3">
+            <div class="card text-center">
+                <div class="card-header">{{episode.episode}}</div>
+                <div class="card-body">
+                    <h4 class="card-title text-warning">{{episode.name}}</h4>
+                </div>
+                <div class="card-footer text-muted">{{episode.air_date}}</div>
+            </div>
+        </div>
+    </div>
+
+    {{!-- Featured Characters --}}
+    <div class="row mt-4">
+        <div class="col text-center text-warning mt-4">
+            <h3>Featured characters in {{episode.name}}:</h3>
+        </div>
+    </div>
+
+    {{!-- Character Card --}}
+    <div class="row" align="center">
+        {{#each episodeCharacters}}
+        <div class="col-xl-6">
+            <div class="card mb-3 box-shadow" style="max-width: 700px;">
+                <div class="row g-0">
+                    <div class="col-md-5">
+                        <a href="#/character/{{id}}"><img src="{{image}}" class="rounded" width="100%"
+                                alt="{{name}}"></a>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="card-body text-warning">
+                            <h4 class="card-title m-0 mb-1"><a href="#/character/{{id}}" class="text-white">{{name}}</a>
+                            </h4>
+                            <p class="card-text align-center"><span class="badge bg-{{status}}"> </span> {{status}} -
+                                {{species}}</p>
+                            <h5 class="card-text mb-1 text-muted">Last known location:</h5>
+                            <p class="card-text"><a href="#/location/{{location.url}}"
+                                    class="text-info">{{location.name}}</a></p>
+                            <h5 class="card-text mb-1 text-muted">First seen in:</h5>
+                            <p class="card-text"><a href="#/location/{{origin.url}}"
+                                    class="text-info">{{origin.name}}</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
