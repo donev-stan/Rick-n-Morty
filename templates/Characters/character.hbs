@@ -1,10 +1,10 @@
-<div class="container mt-4 mb-4">
+<div class="container my-4">
 
     {{!-- Navigation Path --}}
     <div class="row">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item text-success"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href="#/characters/1">Characters</a></li>
                 <li class="breadcrumb-item text-warning" aria-current="page">{{character.name}}</li>
             </ol>
@@ -24,12 +24,29 @@
                     <p class="card-text mb-1 h5">Type: {{character.type}}</p>
                     {{/if}}
                     <p class="card-text mb-1 h5">Gender: {{character.gender}}</p>
-                    <p class="card-text mb-1 h5">Origin: <a
-                            href="#/location/{{character.origin.url}}" class="text-info">{{character.origin.name}}</a></p>
-                    <p class="card-text mb-1 h5">Last seen: <a
-                            href="#/location/{{character.location.url}}" class="text-info">{{character.location.name}}</a></p>
+                    <p class="card-text mb-1 h5">Origin: <a href="#/location/{{character.origin.url}}"
+                            class="text-info">{{character.origin.name}}</a></p>
+                    <p class="card-text mb-1 h5">Last seen: <a href="#/location/{{character.location.url}}"
+                            class="text-info">{{character.location.name}}</a></p>
                 </div>
             </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="row mb-4 d-flex mt-2">
+                <div class="col d-flex pb-2">
+                    <button type="button" class="btn btn-outline-primary">Like</button>
+                    <h6 class="text-white pt-2" style="padding-left: 20px">0 Likes </h6>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-outline-success width-100">Bookmark</button>
+                </div>
+            </div>
+{{!-- 
+            <div class="input-group">
+                <textarea class="form-control" aria-label="With textarea"></textarea>
+                <button class="btn btn-outline-secondary" type="button" id="button-addon1">comment</button>
+            </div> --}}
         </div>
     </div>
 

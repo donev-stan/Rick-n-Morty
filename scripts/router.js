@@ -44,7 +44,7 @@ const router = Sammy("#root", function () {
         context.characters = results;
 
         loadPageNavigation(context, info, "characters").then(function () {
-            this.partial("../templates/Characters/characters.hbs");
+            this.partial("../templates/characters/characters.hbs");
         });
     });
 
@@ -71,7 +71,7 @@ const router = Sammy("#root", function () {
         }
 
         context.character = await character;
-        this.partial("../templates/Characters/character.hbs");
+        this.partial("../templates/characters/character.hbs");
     });
 
     // Locations
@@ -93,7 +93,7 @@ const router = Sammy("#root", function () {
         context.locations = await results;
 
         loadPageNavigation(context, info, "locations").then(function () {
-            this.partial("../templates/Locations/locations.hbs");
+            this.partial("../templates/locations/locations.hbs");
         });
     });
 
@@ -119,7 +119,7 @@ const router = Sammy("#root", function () {
         }
 
         context.location = location;
-        this.partial("../templates/Locations/location.hbs");
+        this.partial("../templates/locations/location.hbs");
     });
 
     // Episodes
@@ -139,7 +139,7 @@ const router = Sammy("#root", function () {
 
         context.episodes = results;
         loadPageNavigation(context, info, "episodes").then(function () {
-            this.partial("../templates/Episodes/episodes.hbs");
+            this.partial("../templates/episodes/episodes.hbs");
         });
     });
 
@@ -154,7 +154,7 @@ const router = Sammy("#root", function () {
         context.episode = episode;
         context.episodeCharacters = episodeCharacters;
 
-        this.partial('../templates/Episodes/episode.hbs');
+        this.partial('../templates/episodes/episode.hbs');
     });
 
 });
@@ -169,7 +169,7 @@ function loadPageNavigation(context, { prev, next }, endpoint) {
     else context.isMorePages = true;
 
     return context.loadPartials({
-        pageNavigation: "../templates/pageNavigation.hbs",
+        pageNavigation: "../templates/common/pageNavigation.hbs",
     });
 }
 

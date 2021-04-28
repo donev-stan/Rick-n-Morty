@@ -1,7 +1,7 @@
 {{!-- Search --}}
 <div class="container-fluid">
     <div class="row mt-4">
-        <div class="collapse" id="navbarToggleExternalContent">
+        <div class="collapse" id="searchForm">
             <form class="row p-4 justify-content-center" action="/locations/1" method="GET">
                 <div class="col-md-3 pb-2">
                     <input class="form-control me-2" type="search" placeholder="Location name" aria-label="Search"
@@ -92,13 +92,25 @@
                 </div>
             </form>
         </div>
+
+        <div class="collapse" id="profileMenu">
+            
+        </div>
+
         <nav class="navbar navbar-dark ">
             <div class="container-fluid">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    data-bs-target="#searchForm" aria-controls="searchForm"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                {{#if userLogged}}
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#profileMenu" aria-controls="profileMenu"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                {{/if}}
             </div>
         </nav>
     </div>
@@ -115,7 +127,7 @@
     </nav>
 </div>
 
-<div class="container mt-4">
+<div class="container my-4">
     {{!-- Card Location --}}
     <div class="row">
         {{#each locations}}
